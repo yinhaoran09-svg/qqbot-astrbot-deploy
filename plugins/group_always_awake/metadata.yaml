@@ -1,0 +1,4 @@
+name: group_always_awake
+desc: 让指定群聊（把 TARGET_GROUPS 改成你的群号）里的消息无需 @ 或前缀即可唤醒机器人
+author: local
+version: 1.0.0

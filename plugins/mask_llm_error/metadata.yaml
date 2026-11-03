@@ -1,0 +1,4 @@
+name: mask_llm_error
+desc: 拦截模型或网关报错原文，防止错误信息被发到聊天里
+version: 1.0.0
+author: local

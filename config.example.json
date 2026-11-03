@@ -1,0 +1,72 @@
+{
+  "_comment": "这是 cmd_config.json 的关键片段示例，不是完整配置。实际文件由 AstrBot 自动生成，请用面板修改，或停服后手工编辑。文件编码是 UTF-8 with BOM。",
+
+  "provider_sources": [
+    {
+      "id": "my-llm-source",
+      "provider": "deepseek",
+      "type": "openai_chat_completion",
+      "provider_type": "chat_completion",
+      "key": ["sk-YOUR-KEY-HERE"],
+      "api_base": "https://your-endpoint/v1",
+      "timeout": 120,
+      "proxy": "",
+      "custom_headers": {}
+    }
+  ],
+
+  "provider": [
+    {
+      "id": "my-llm",
+      "enable": true,
+      "model": "deepseek-chat",
+      "provider_source_id": "my-llm-source"
+    }
+  ],
+
+  "agent_runner": {
+    "config": {
+      "persona": {
+        "persona_id": "xiaoman",
+        "safety_mode": false,
+        "safety_mode_strategy": "system_prompt"
+      }
+    }
+  },
+
+  "platform": [
+    {
+      "id": "qq-personal",
+      "type": "aiocqhttp",
+      "enable": true,
+      "ws_reverse_host": "0.0.0.0",
+      "ws_reverse_port": 6199,
+      "ws_reverse_token": ""
+    }
+  ],
+
+  "platform_settings": {
+    "segmented_reply": {
+      "enable": true,
+      "only_llm_result": true,
+      "interval_method": "random",
+      "interval": "1.0,2.6",
+      "words_count_threshold": 150,
+      "split_mode": "regex",
+      "regex": ".*?[。？！~…\n]+|.+$",
+      "split_words": ["。", "？", "！", "~", "…"],
+      "content_cleanup_rule": "。\\s*$"
+    },
+    "enable_id_white_list": true,
+    "id_whitelist": [
+      "qq-personal:FriendMessage:YOUR_FRIEND_QQ",
+      "qq-personal:GroupMessage:YOUR_GROUP_ID",
+      "YOUR_GROUP_ID"
+    ],
+    "reply_with_mention": false,
+    "reply_with_quote": false,
+    "ignore_bot_self_message": false
+  },
+
+  "wake_prefix": null
+}
