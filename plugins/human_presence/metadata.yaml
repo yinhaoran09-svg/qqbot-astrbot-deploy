@@ -1,0 +1,4 @@
+name: human_presence
+desc: 不秒回、会拖一会儿、偶尔干脆不回；没人理的时候还会自己开口。让机器人有「在场感」而不是「应答机」
+author: local
+version: 1.0.0

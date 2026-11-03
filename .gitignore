@@ -22,3 +22,9 @@ qrcode.png
 .env
 *.key
 secrets.*
+
+# 插件运行时生成的联系人档案（含 QQ 号、备注，绝对不要提交）
+people.json
+
+# 本地备份
+*.bak-*
